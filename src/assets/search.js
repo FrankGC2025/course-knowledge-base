@@ -176,7 +176,10 @@
     const container = document.querySelector('.content');
     if (!container) return;
 
-    const pattern = new RegExp(`(${terms.map(escapeRegex).join('|')})`, 'gi');
+    // Prefer highlighting the original query as a whole; fall back to individual terms
+    const termPattern = new RegExp(`(${terms.map(escapeRegex).join('|')})`, 'gi');
+    const queryPattern = new RegExp(`(${escapeRegex(query)})`, 'gi');
+    const pattern = queryPattern.test(container.textContent) ? queryPattern : termPattern;
 
     const walker = document.createTreeWalker(
       container,
