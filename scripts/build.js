@@ -301,11 +301,13 @@ function renderPage(page, courses, prevNext) {
   <link rel="stylesheet" href="${BASE_URL}/assets/style.css">
   <script defer src="${BASE_URL}/assets/minisearch.js"></script>
   <script defer src="${BASE_URL}/assets/search.js"></script>
+  <script defer src="${BASE_URL}/assets/ui.js"></script>
 </head>
 <body>
   ${topNav}
   <div class="layout">
     ${sidebar}
+    <div class="sidebar-backdrop" aria-hidden="true"></div>
     <main class="main">
       <article class="content">
         ${breadcrumbs}
@@ -321,13 +323,26 @@ function renderPage(page, courses, prevNext) {
 function renderTopNav() {
   return `<header class="top-nav">
   <div class="top-nav-inner">
-    <a class="site-title" href="${BASE_URL}/index.html">Course KB</a>
-    <nav class="top-links">
-      <a href="${BASE_URL}/index.html">Home</a>
-      <a href="${BASE_URL}/about.html">About</a>
-    </nav>
+    <div class="top-nav-left">
+      <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation" aria-expanded="true" aria-controls="sidebar">
+        <svg class="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <a class="site-title" href="${BASE_URL}/index.html">Course KB</a>
+      <nav class="top-links">
+        <a href="${BASE_URL}/index.html">Home</a>
+        <a href="${BASE_URL}/about.html">About</a>
+      </nav>
+    </div>
     <div class="search-box">
-      <input type="text" id="search-input" placeholder="Search notes..." autocomplete="off">
+      <input type="text" id="search-input" placeholder="Search notes..." autocomplete="off" aria-label="Search notes">
       <div id="search-results" class="search-results"></div>
     </div>
   </div>
@@ -335,7 +350,8 @@ function renderTopNav() {
 }
 
 function renderSidebar(courses, currentCourse, currentPage) {
-  let html = `<aside class="sidebar">
+  let html = `<aside class="sidebar" id="sidebar" role="navigation" aria-label="Main">
+    <div class="sidebar-inner">
     <div class="sidebar-section">
       <a class="sidebar-link ${!currentCourse ? 'active' : ''}" href="${BASE_URL}/index.html">Home</a>
       <a class="sidebar-link ${currentPage && currentPage.url === `${BASE_URL}/about.html` ? 'active' : ''}" href="${BASE_URL}/about.html">About</a>
@@ -370,7 +386,7 @@ function renderSidebar(courses, currentCourse, currentPage) {
     }
   }
 
-  html += `</div></aside>`;
+  html += `</div></div></aside>`;
   return html;
 }
 
