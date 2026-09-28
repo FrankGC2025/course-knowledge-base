@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# course-knowledge-base
-=======
 # Course Knowledge Base
 
 个人课程知识库。整理本学期部分课程的 Markdown 笔记，生成可搜索、可导航的静态网站。
@@ -88,4 +85,3 @@ content/courses/new-course/
 
 - 本站笔记为个人学习整理，部分经 AI 辅助生成，会明确标注。
 - 受版权保护的课程材料（教材、课件、答案等）不会公开发布。
->>>>>>> 2dd5555 (Initial commit: course knowledge base)
