@@ -46,6 +46,7 @@ description: 商业银行、投资银行、保险与基金的风险管理基础�
 - [2026-09-08 风险管理导论与金融学基础回顾](lecture-notes/2026-09-08-introduction.html)
 - [2026-09-15 银行与保险公司](lecture-notes/2026-09-15-banking-insurance.html)
 - [2026-09-22 基金与金融市场交易、次贷危机](lecture-notes/2026-09-22-funds-market-crisis.html)
+- [2026-09-29 估值、情景分析与交易风险管理](lecture-notes/2026-09-29-valuation-scenario-greeks.html)
 
 ## Problems
 
@@ -63,5 +64,7 @@ description: 商业银行、投资银行、保险与基金的风险管理基础�
 - 远期、期货、互换与期权基础
 - 发起-分销模式与 2008 年金融危机
 - ABS、CDO、瀑布机制与信用评级
+- 风险中性定价、情景分析、蒙特卡洛模拟
+- 希腊字母（Delta / Gamma / Vega / Theta / Rho）与动态对冲
 
 > 本页为课程导航页，更多笔记可直接在左侧边栏查看。
