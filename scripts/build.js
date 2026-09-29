@@ -296,6 +296,7 @@ function renderPage(page, courses, prevNext) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtml(pageTitle)}</title>
+  <link rel="icon" type="image/png" href="${BASE_URL}/icon.png">
   <link rel="stylesheet" href="${BASE_URL}/assets/katex.min.css">
   <link rel="stylesheet" href="${BASE_URL}/assets/highlight-github.min.css">
   <link rel="stylesheet" href="${BASE_URL}/assets/style.css">
@@ -335,7 +336,10 @@ function renderTopNav() {
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
-      <a class="site-title" href="${BASE_URL}/index.html">Course KB</a>
+      <a class="site-brand" href="${BASE_URL}/index.html">
+        <img src="${BASE_URL}/icon.png" alt="" class="site-icon" width="32" height="32">
+        <span class="site-title">CourseAtlas</span>
+      </a>
       <nav class="top-links">
         <a href="${BASE_URL}/index.html">Home</a>
         <a href="${BASE_URL}/about.html">About</a>
